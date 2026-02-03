@@ -1,18 +1,31 @@
 import React, { createContext, useState } from "react";
 export const dataContext = createContext();
 
+export let user = {
+    data: null,
+    mime_type: null,
+    imgUrl: null
+}
+
+export let PrevUser = {
+    data: null,
+    mime_type: null,
+    prompt: null,
+    imgUrl: null
+}
+
 function UserContext({children}) {
     let [letStartRes, setLetStartRes] = useState(false);
     let [popUp, setPopUp] = useState(false);
     let [input, setInput] = useState("");
     let [feature, setFeature] = useState("chat");
-    let [prevInput, setPrevInput] = useState("");
+    let [showResult, setShowResult] = useState("");
     let value = {
         letStartRes, setLetStartRes,
         popUp, setPopUp,
         input, setInput,
         feature, setFeature,
-        prevInput, setPrevInput
+        showResult, setShowResult
     }
     return (
         <div>
